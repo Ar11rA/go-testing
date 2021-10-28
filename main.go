@@ -9,8 +9,9 @@ import (
 )
 
 func main() {
-	fmt.Println("hi")
+	fmt.Println("Heimdall HTTP client example")
 	timeout := 1000 * time.Millisecond
 	client := httpclient.NewClient(httpclient.WithHTTPTimeout(timeout))
 	fmt.Println(async.FetchQuotes(client))
+	async.FetchCharacterById(client, 1)
 }
